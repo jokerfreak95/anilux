@@ -1,110 +1,185 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Anilux — Classy Anime Merch</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Premium, stylish, and beginner-friendly anime clothing shop.">
-  <meta property="og:title" content="Anilux — Classy Anime Merch" />
-  <meta property="og:description" content="Your destination for elegant anime streetwear and accessories." />
-  <meta property="og:image" content="images/og-image.png" />
-  <meta property="og:url" content="https://jokerfreak95.github.io/anilux" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Inter&display=swap" rel="stylesheet" />
-</head>
-<body>
-<header class="top">
-  <h1 class="logo"><a href="/">Anilux</a></h1>
-  <nav>
-    <a href="shop.html">Shop</a>
-    <a href="cart.html"><span id="cart-count">0</span> Cart</a>
-  </nav>
-</header>
+  <meta charset="utf-8">
+  <title>Anilux – Soft-Glow Anime Wear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<section class="promo-banner">
-  <p>✨ Launch Sale: Use code <strong>ANILUX10</strong> for 10% off your first order! ✨</p>
-</section>
+  <!--  google font  -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-<section class="hero">
-  <h1>Anime Apparel & Accessories</h1>
-  <p class="subtitle">Premium, officially-inspired streetwear and collectibles.</p>
-  <a class="btn" href="shop.html">Shop New Arrivals</a>
-</section>
-  <section class="collections" id="collections">
-  <h2>Featured Collections</h2>
-  <div class="collections-grid">
-    <a class="collection-card" href="shop.html?collection=berserk">
-      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Berserk" />
-      <div>Berserk</div>
-    </a>
-    <a class="collection-card" href="shop.html?collection=evangelion">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Evangelion" />
-      <div>Evangelion</div>
-    </a>
-    <a class="collection-card" href="shop.html?collection=cowboy-bebop">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Cowboy Bebop" />
-      <div>Cowboy Bebop</div>
-    </a>
-  </div>
-</section>
-<section class="lookbook">
-  <h3>This Season</h3>
-  <div class="glider">
-    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Akira skyline tee" />
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Minimalist kanji hoodie" />
-    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Studio gradient bomber" />
-  </div>
-</section>
-
-
-<!-- Email signup popup -->
-<div class="email-signup" id="email-signup">
-  <div class="popup-content">
-    <h3>Join the Anilux Club</h3>
-    <p>Get exclusive drops and discounts. No spam, ever.</p>
-    <input type="email" id="signup-email" placeholder="Your email" />
-    <button onclick="signupEmail()">Sign Up</button>
-    <span class="close" onclick="document.getElementById('email-signup').style.display='none'">&times;</span>
-  </div>
-</div>
-
-<script src="js/cart.js"></script>
-<script>
-  // Show signup popup after delay
-  setTimeout(() => document.getElementById('email-signup').style.display = 'block', 3000);
-  function signupEmail() {
-    let email = document.getElementById('signup-email').value;
-    if(email && email.includes('@')) {
-      alert('Thanks for signing up! 🎉');
-      document.getElementById('email-signup').style.display = 'none';
-    } else {
-      alert('Please enter a valid email address.');
+  <style>
+    :root{
+      --cream:#fff8f5;
+      --navy:#0b1020;
+      --pink:#ff7eb3;
+      --gray:#7a7d9c;
+      --font:'Quicksand',sans-serif;
+      --radius:16px;
     }
-  }
-</script>
-  <section class="reviews" id="reviews">
-  <h2>Fans Love Anilux</h2>
-  <div class="review-grid">
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>“The quality is fantastic, the details are amazing! This is more than just merch to me—it’s wearable art.”</p>
-      <span>- Mina</span>
+    [data-theme="dark"]{
+      --cream:#0b1020;
+      --navy:#fff8f5;
+      --pink:#ff9bc0;
+      --gray:#a9acc4;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:var(--font);
+      background:var(--cream);
+      color:var(--navy);
+      transition:background .3s,color .3s;
+    }
+    img{max-width:100%;display:block;border-radius:var(--radius)}
+    a{text-decoration:none;color:inherit}
+    header,section,footer{padding:clamp(2rem,5vw,4rem) clamp(1rem,5vw,3rem)}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:600;font-size:1.5rem;letter-spacing:.05em}
+    nav a{margin-left:1.2rem;font-size:.9rem;font-weight:600}
+    .theme-toggle{
+      cursor:pointer;margin-left:1rem;font-size:1.2rem;
+      background:var(--pink);color:#fff;border:none;border-radius:50%;
+      width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;
+    }
+    .hero{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      min-height:70vh;text-align:center;
+      background:url("https://source.unsplash.com/1600x900/?anime,sky") center/cover no-repeat;
+      position:relative;color:#fff;border-radius:var(--radius);
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(11,16,32,.3),rgba(11,16,32,.6));
+      border-radius:var(--radius);
+    }
+    .hero>*{position:relative;z-index:2}
+    .hero h1{font-size:clamp(2.2rem,5vw,4rem);margin-bottom:1rem}
+    .btn{
+      display:inline-block;margin-top:1.2rem;padding:.9rem 2.2rem;background:var(--pink);color:#fff;
+      border-radius:var(--radius);font-weight:600;transition:.25s;
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,126,179,.35)}
+    .grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{
+      background:rgba(255,255,255,.55);
+      border:1px solid rgba(255,255,255,.4);
+      border-radius:var(--radius);
+      backdrop-filter:blur(10px);
+      overflow:hidden;
+      transition:.25s;
+    }
+    [data-theme="dark"] .card{background:rgba(30,35,60,.45);border:1px solid rgba(255,255,255,.08)}
+    .card:hover{transform:translateY(-4px) scale(1.02);}
+    .card-body{padding:1.2rem}
+    .card-body h3{font-size:1.1rem;margin-bottom:.4rem}
+    .card-body p{color:var(--gray);font-size:.9rem}
+    footer{text-align:center;font-size:.8rem;color:var(--gray)}
+    #cart-count{background:var(--pink);color:#fff;font-size:.65rem;padding:.15rem .35rem;border-radius:99px;margin-left:.2rem}
+    /* floating sakura */
+    .sakura{
+      position:fixed;width:12px;height:12px;background:var(--pink);border-radius:0 100% 0 100%;
+      opacity:.35;animation:drift 12s infinite linear;pointer-events:none;
+    }
+    @keyframes drift{
+      0%{transform:translateY(-10vh) rotate(0deg)}
+      100%{transform:translateY(110vh) rotate(360deg)}
+    }
+  </style>
+</head>
+
+<body>
+  <!--  SAKURA PETALS  -->
+  <div class="sakura" style="left:10%;animation-duration:14s;animation-delay:0s"></div>
+  <div class="sakura" style="left:30%;animation-duration:18s;animation-delay:2s"></div>
+  <div class="sakura" style="left:60%;animation-duration:16s;animation-delay:4s"></div>
+  <div class="sakura" style="left:80%;animation-duration:20s;animation-delay:1s"></div>
+
+  <!--  HEADER  -->
+  <header>
+    <div class="logo">Anilux</div>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="cart.html">Cart <span id="cart-count">0</span></a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌓</button>
+    </nav>
+  </header>
+
+  <!--  HERO  -->
+  <section class="hero">
+    <h1>Soft-Glow Anime Wear</h1>
+    <p>Comfort meets fandom – crafted for everyday adventures.</p>
+    <a class="btn" href="#shop">Explore Drop</a>
+  </section>
+
+  <!--  SHOP GRID  -->
+  <section id="shop">
+    <div class="grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/500x700/?anime,hoodie,pastel" alt="Hoodie">
+        <div class="card-body">
+          <h3>Sakura-Blend Hoodie</h3>
+          <p>$79</p>
+          <button class="btn" onclick="addToCart('Sakura-Blend Hoodie',79)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/500x700/?anime,tee,pastel" alt="Tee">
+        <div class="card-body">
+          <h3>Cloud-Moment Tee</h3>
+          <p>$42</p>
+          <button class="btn" onclick="addToCart('Cloud-Moment Tee',42)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/500x700/?anime,jacket,pastel" alt="Jacket">
+        <div class="card-body">
+          <h3>Dream-Light Jacket</h3>
+          <p>$129</p>
+          <button class="btn" onclick="addToCart('Dream-Light Jacket',129)">Add to Cart</button>
+        </div>
+      </div>
     </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>“Thank you, Anilux! The hoodie is so soft and fits perfectly. I’ll definitely buy again!”</p>
-      <span>- Jay</span>
-    </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>“Best anime clothes online. Fast shipping, premium feel, looks awesome.”</p>
-      <span>- Alex</span>
-    </div>
-  </div>
-</section>
-<footer>
-  <p>&copy; 2025 Anilux. For fans, by fans. Not affiliated with Atsuko.</p>
-</footer>
+  </section>
+
+  <!--  FOOTER  -->
+  <footer>
+    © <span id="year"></span> Anilux. All rights reserved.
+  </footer>
+
+  <!--  JS  -->
+  <script>
+    // auto year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // theme toggle
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) html.setAttribute('data-theme','dark');
+    toggle.addEventListener('click',()=>{
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme',next);
+      localStorage.setItem('theme',next);
+    });
+
+    // tiny cart
+    const CART = JSON.parse(localStorage.getItem('anilux-cart')) || [];
+    function saveCart(){ localStorage.setItem('anilux-cart', JSON.stringify(CART)); }
+    function renderCount(){
+      document.getElementById('cart-count').textContent = CART.reduce((s,i)=>s+i.qty,0);
+    }
+    function addToCart(name,price){
+      const exist = CART.find(i => i.name === name);
+      exist ? exist.qty++ : CART.push({name,price,qty:1});
+      saveCart(); renderCount();
+      // soft toast
+      const t = document.createElement('div'); t.textContent = 'Added ✨'; t.style.cssText = 'position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;padding:.6rem 1.4rem;border-radius:var(--radius);font-size:.9rem;animation:fade 1.5s forwards';
+      document.body.appendChild(t); setTimeout(()=>t.remove(),1500);
+    }
+    renderCount();
+  </script>
 </body>
 </html>
