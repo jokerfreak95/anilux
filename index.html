@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Anilux — Classy Anime Merch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Premium, stylish, and beginner-friendly anime clothing shop.">
+  <meta property="og:title" content="Anilux — Classy Anime Merch" />
+  <meta property="og:description" content="Your destination for elegant anime streetwear and accessories." />
+  <meta property="og:image" content="images/og-image.png" />
+  <meta property="og:url" content="https://jokerfreak95.github.io/anilux" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Inter&display=swap" rel="stylesheet" />
+</head>
+<body>
+<header class="top">
+  <h1 class="logo"><a href="/">Anilux</a></h1>
+  <nav>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html"><span id="cart-count">0</span> Cart</a>
+  </nav>
+</header>
+
+<section class="promo-banner">
+  <p>✨ Launch Sale: Use code <strong>ANILUX10</strong> for 10% off your first order! ✨</p>
+</section>
+
+<section class="hero">
+  <h2 class="reveal">Wear the Moment.<br><span class="gold">Anime, Tailored.</span></h2>
+  <a class="btn" href="shop.html">Explore Drop</a>
+</section>
+
+<section class="lookbook">
+  <h3>This Season</h3>
+  <div class="glider">
+    <img src="images/hero1.jpg" alt="Akira skyline tee" />
+    <img src="images/hero2.jpg" alt="Minimalist kanji hoodie" />
+    <img src="images/hero3.jpg" alt="Studio gradient bomber" />
+  </div>
+</section>
+
+<!-- Email signup popup -->
+<div class="email-signup" id="email-signup">
+  <div class="popup-content">
+    <h3>Join the Anilux Club</h3>
+    <p>Get exclusive drops and discounts. No spam, ever.</p>
+    <input type="email" id="signup-email" placeholder="Your email" />
+    <button onclick="signupEmail()">Sign Up</button>
+    <span class="close" onclick="document.getElementById('email-signup').style.display='none'">&times;</span>
+  </div>
+</div>
+
+<script src="js/cart.js"></script>
+<script>
+  // Show signup popup after delay
+  setTimeout(() => document.getElementById('email-signup').style.display = 'block', 3000);
+  function signupEmail() {
+    let email = document.getElementById('signup-email').value;
+    if(email && email.includes('@')) {
+      alert('Thanks for signing up! 🎉');
+      document.getElementById('email-signup').style.display = 'none';
+    } else {
+      alert('Please enter a valid email address.');
+    }
+  }
+</script>
+</body>
+</html>

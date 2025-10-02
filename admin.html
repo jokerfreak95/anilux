@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Admin — Anilux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="top">
+  <h1 class="logo"><a href="index.html">Anilux</a></h1>
+  <nav>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html"><span id="cart-count">0</span> Cart</a>
+  </nav>
+</header>
+<main class="admin">
+  <h2>Stockroom</h2>
+  <form id="add-item">
+    <input name="name" placeholder="Product name" required />
+    <input name="price" type="number" step="0.01" placeholder="Price" required />
+    <input name="size" placeholder="S,M,L,XL" />
+    <input name="img" type="file" accept="image/*" />
+    <button>Add Item</button>
+  </form>
+  <ul id="inventory"></ul>
+</main>
+<script src="js/admin.js"></script>
+</body>
+</html>

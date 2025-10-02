@@ -1,0 +1,23 @@
+[
+  {
+    "id": "akira-tee",
+    "name": "Akira Skyline Tee",
+    "price": 29.99,
+    "size": "M,L,XL",
+    "img": "images/hero1.jpg"
+  },
+  {
+    "id": "kanji-hoodie",
+    "name": "Minimalist Kanji Hoodie",
+    "price": 49.99,
+    "size": "S,M,L,XL",
+    "img": "images/hero2.jpg"
+  },
+  {
+    "id": "gradient-bomber",
+    "name": "Studio Gradient Bomber",
+    "price": 69.99,
+    "size": "M,L",
+    "img": "images/hero3.jpg"
+  }
+]
