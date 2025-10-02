@@ -265,5 +265,64 @@
     }
     renderCount();
   </script>
+<!-- Product Modal -->
+<div id="productModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:10000;align-items:center;justify-content:center;">
+  <div id="modalContent" style="background:#fff8f5;border-radius:16px;padding:2rem;max-width:420px;width:90vw;box-shadow:0 8px 32px #0006;position:relative;">
+    <button onclick="closeModal()" style="position:absolute;top:.7rem;right:.7rem;background:var(--pink);color:#fff;border:none;border-radius:50%;width:2.1rem;height:2.1rem;font-size:1.3rem;cursor:pointer;">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<script>
+function showModal(product) {
+  // Example data, replace with dynamic if needed
+  const products = {
+    'Sakura-Blend Hoodie': {
+      img: 'https://images.pexels.com/photos/16589650/pexels-photo-16589650.jpeg?auto=compress&cs=tinysrgb&w=500',
+      desc: 'Ultra-soft fleece, pastel print, all-gender fit. Limited run. Machine-washable, made for comfort.',
+      sizes: ['S','M','L','XL'],
+      price: 79,
+      reviews: [
+        "So soft and cute! - Yuki",
+        "Perfect for chilly days. - Sam"
+      ]
+    },
+    'Cloud-Moment Tee': {
+      img: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0&w=500',
+      desc: 'Lightweight, cloud-drift dye, ultra-comfy. 100% cotton. Designed for all seasons.',
+      sizes: ['S','M','L'],
+      price: 42,
+      reviews: [
+        "Love the dye pattern! - Jess",
+        "Breathable and comfy. - Mike"
+      ]
+    },
+    'Dream-Light Jacket': {
+      img: 'https://stockcake.com/wp-content/uploads/2023/09/Pastel-Anime-Jacket-StockCake.jpg',
+      desc: 'Windbreaker, neon lining, rare drop. Water-resistant, zip pockets, festival-ready.',
+      sizes: ['M','L','XL'],
+      price: 129,
+      reviews: [
+        "Stylish and practical. - Rei",
+        "Great for rainy days. - Alex"
+      ]
+    }
+  };
+  const p = products[product];
+  document.getElementById('modalBody').innerHTML = `
+    <img src="${p.img}" style="width:100%;border-radius:14px;margin-bottom:1rem">
+    <h2 style="margin-bottom:.7rem;">${product}</h2>
+    <p style="margin-bottom:.5rem;color:#7a7d9c">${p.desc}</p>
+    <div style="margin-bottom:.7rem;"><b>Sizes:</b> ${p.sizes.map(s=>`<span style="display:inline-block;background:#eee;border-radius:8px;padding:2px 8px;margin-right:6px;font-size:.98em;">${s}</span>`).join('')}</div>
+    <div style="font-weight:bold;">$${p.price}</div>
+    <button class="btn" style="margin-top:1rem;" onclick="addToCart('${product}',${p.price});closeModal();">Add to Cart</button>
+    <hr style="margin:1.3rem 0;">
+    <div><b>Reviews:</b><ul style="margin:.7rem 0 0 1.1rem;font-size:.97em;color:#ff7eb3">${p.reviews.map(r=>`<li>${r}</li>`).join('')}</ul></div>
+  `;
+  document.getElementById('productModal').style.display = 'flex';
+}
+function closeModal() {
+  document.getElementById('productModal').style.display = 'none';
+}
+</script>
 </body>
 </html>
