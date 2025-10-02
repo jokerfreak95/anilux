@@ -5,7 +5,7 @@
   <title>Anilux – Soft-Glow Anime Wear</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--  google font  -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -44,7 +44,7 @@
     .hero{
       display:flex;flex-direction:column;align-items:center;justify-content:center;
       min-height:70vh;text-align:center;
-      background:url("https://source.unsplash.com/1600x900/?anime,sky") center/cover no-repeat;
+      background:url("https://images.pexels.com/photos/16589650/pexels-photo-16589650.jpeg?auto=compress&cs=tinysrgb&w=1200") center/cover no-repeat;
       position:relative;color:#fff;border-radius:var(--radius);
     }
     .hero::after{
@@ -54,11 +54,24 @@
     }
     .hero>*{position:relative;z-index:2}
     .hero h1{font-size:clamp(2.2rem,5vw,4rem);margin-bottom:1rem}
+    .hero p{font-size:1.2rem;margin-bottom:1.7rem}
     .btn{
       display:inline-block;margin-top:1.2rem;padding:.9rem 2.2rem;background:var(--pink);color:#fff;
       border-radius:var(--radius);font-weight:600;transition:.25s;
     }
     .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,126,179,.35)}
+    .promo-banner{
+      background:var(--pink);
+      color:#fff;
+      text-align:center;
+      padding:.8rem 0;
+      font-weight:700;
+      letter-spacing:.05em;
+      border-radius:var(--radius);
+      margin-bottom:2rem;
+      font-size:1.13rem;
+      box-shadow:0 2px 12px #ff7eb327;
+    }
     .grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .card{
       background:rgba(255,255,255,.55);
@@ -67,26 +80,43 @@
       backdrop-filter:blur(10px);
       overflow:hidden;
       transition:.25s;
+      position:relative;
     }
-    [data-theme="dark"] .card{background:rgba(30,35,60,.45);border:1px solid rgba(255,255,255,.08)}
+    [data-theme="dark"] .card{background:rgba(30,35,60,.45);border:1px solid rgba(255,255,255,.09)}
     .card:hover{transform:translateY(-4px) scale(1.02);}
     .card-body{padding:1.2rem}
-    .card-body h3{font-size:1.1rem;margin-bottom:.4rem}
-    .card-body p{color:var(--gray);font-size:.9rem}
-    footer{text-align:center;font-size:.8rem;color:var(--gray)}
-    #cart-count{background:var(--pink);color:#fff;font-size:.65rem;padding:.15rem .35rem;border-radius:99px;margin-left:.2rem}
+    .card-body h3{font-size:1.17rem;margin-bottom:.4rem}
+    .card-body p{color:var(--gray);font-size:.95rem}
+    .card .stars{
+      color:var(--pink);
+      font-size:1rem;
+      margin-bottom:0.3rem;
+    }
+    .card .badge{
+      position:absolute;top:16px;left:16px;
+      background:var(--pink);color:#fff;padding:.3rem .8rem;
+      border-radius:99px;font-size:.7rem;font-weight:700;letter-spacing:.07em;
+      box-shadow:0 1px 8px #ff7eb327;
+    }
+    footer{text-align:center;font-size:.9rem;color:var(--gray)}
+    #cart-count{background:var(--pink);color:#fff;font-size:.7rem;padding:.18rem .5rem;border-radius:99px;margin-left:.2rem}
     /* floating sakura */
     .sakura{
-      position:fixed;width:12px;height:12px;background:var(--pink);border-radius:0 100% 0 100%;
-      opacity:.35;animation:drift 12s infinite linear;pointer-events:none;
+      position:fixed;width:15px;height:15px;background:var(--pink);border-radius:0 100% 0 100%;
+      opacity:.32;animation:drift 12s infinite linear;pointer-events:none;z-index:1111;
     }
     @keyframes drift{
       0%{transform:translateY(-10vh) rotate(0deg)}
       100%{transform:translateY(110vh) rotate(360deg)}
     }
+    @media (max-width: 600px) {
+      .hero h1 {font-size:1.1rem;}
+      .hero p {font-size:1rem;}
+      .logo {font-size:1rem;}
+      .grid {gap:1.2rem;}
+    }
   </style>
 </head>
-
 <body>
   <!--  SAKURA PETALS  -->
   <div class="sakura" style="left:10%;animation-duration:14s;animation-delay:0s"></div>
@@ -105,6 +135,11 @@
     </nav>
   </header>
 
+  <!--  PROMO BANNER  -->
+  <div class="promo-banner">
+    ✨ Launch Sale: Use code <b>ANILUX10</b> for 10% off your first order! ✨
+  </div>
+
   <!--  HERO  -->
   <section class="hero">
     <h1>Soft-Glow Anime Wear</h1>
@@ -113,30 +148,79 @@
   </section>
 
   <!--  SHOP GRID  -->
-  <section id="shop">
+  <section id="shop" style="margin-top:2rem;">
     <div class="grid">
+      <!-- Safe, hot-linkable images! -->
+      <!-- Hoodie -->
       <div class="card">
-        <img src="https://source.unsplash.com/500x700/?anime,hoodie,pastel" alt="Hoodie">
+        <span class="badge">Best Seller</span>
+        <img src="https://images.pexels.com/photos/16589650/pexels-photo-16589650.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Pastel anime hoodie">
         <div class="card-body">
+          <div class="stars">★★★★★</div>
           <h3>Sakura-Blend Hoodie</h3>
-          <p>$79</p>
+          <p>Soft fleece, pastel print, all-gender fit.</p>
+          <p><b>$79</b></p>
           <button class="btn" onclick="addToCart('Sakura-Blend Hoodie',79)">Add to Cart</button>
         </div>
       </div>
+      <!-- Tee -->
       <div class="card">
-        <img src="https://source.unsplash.com/500x700/?anime,tee,pastel" alt="Tee">
+        <span class="badge">New</span>
+        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0&w=500" alt="Anime style tee">
         <div class="card-body">
+          <div class="stars">★★★★★</div>
           <h3>Cloud-Moment Tee</h3>
-          <p>$42</p>
+          <p>Lightweight, cloud-drift dye, ultra-comfy.</p>
+          <p><b>$42</b></p>
           <button class="btn" onclick="addToCart('Cloud-Moment Tee',42)">Add to Cart</button>
         </div>
       </div>
+      <!-- Jacket -->
       <div class="card">
-        <img src="https://source.unsplash.com/500x700/?anime,jacket,pastel" alt="Jacket">
+        <span class="badge">Limited</span>
+        <img src="https://stockcake.com/wp-content/uploads/2023/09/Pastel-Anime-Jacket-StockCake.jpg" alt="Light anime jacket">
         <div class="card-body">
+          <div class="stars">★★★★☆</div>
           <h3>Dream-Light Jacket</h3>
-          <p>$129</p>
+          <p>Windbreaker, neon lining, rare drop.</p>
+          <p><b>$129</b></p>
           <button class="btn" onclick="addToCart('Dream-Light Jacket',129)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  ABOUT SECTION  -->
+  <section id="about" style="margin-top:2.5rem;">
+    <h2 style="font-size:1.3rem;margin-bottom:1.2rem;font-weight:600;">About Anilux</h2>
+    <p style="max-width:600px;margin:0 auto 1.2rem auto;font-size:1.07rem;color:var(--gray);">
+      Anilux is a new kind of anime shop: luxury loungewear, pastel palettes, and subtle designs for fans who want to express their love in style. All products are ethically made, limited-run, and shipped worldwide. Join the soft-glow revolution!
+    </p>
+  </section>
+
+  <!--  REVIEWS SECTION  -->
+  <section id="reviews" style="margin-top:2.5rem;">
+    <h2 style="font-size:1.2rem;margin-bottom:1.2rem;font-weight:600;">Fans Love Anilux</h2>
+    <div class="grid" style="gap:1.2rem;">
+      <div class="card">
+        <div class="card-body">
+          <div class="stars">★★★★★</div>
+          <p>"The quality is fantastic, the details are amazing! This is more than just merch to me—it's wearable art."</p>
+          <span style="font-size:.93em;color:var(--gray);font-weight:600;">– Mina</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="stars">★★★★★</div>
+          <p>"Thank you, Anilux! The hoodie is so soft and fits perfectly. I’ll definitely buy again!"</p>
+          <span style="font-size:.93em;color:var(--gray);font-weight:600;">– Jay</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="stars">★★★★☆</div>
+          <p>"Best anime clothes online. Fast shipping, premium feel, looks awesome."</p>
+          <span style="font-size:.93em;color:var(--gray);font-weight:600;">– Alex</span>
         </div>
       </div>
     </div>
@@ -144,7 +228,7 @@
 
   <!--  FOOTER  -->
   <footer>
-    © <span id="year"></span> Anilux. All rights reserved.
+    © <span id="year"></span> Anilux. All rights reserved. Not affiliated with any official anime studios. For demo only.
   </footer>
 
   <!--  JS  -->
@@ -176,8 +260,8 @@
       exist ? exist.qty++ : CART.push({name,price,qty:1});
       saveCart(); renderCount();
       // soft toast
-      const t = document.createElement('div'); t.textContent = 'Added ✨'; t.style.cssText = 'position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;padding:.6rem 1.4rem;border-radius:var(--radius);font-size:.9rem;animation:fade 1.5s forwards';
-      document.body.appendChild(t); setTimeout(()=>t.remove(),1500);
+      const t = document.createElement('div'); t.textContent = 'Added ✨'; t.style.cssText = 'position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;padding:.6rem 1.4rem;border-radius:var(--radius);font-size:.97rem;animation:fade 1.5s forwards;z-index:9999;';
+      document.body.appendChild(t); setTimeout(()=>t.remove(),1400);
     }
     renderCount();
   </script>
