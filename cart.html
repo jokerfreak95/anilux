@@ -17,6 +17,7 @@
     .cart-item-remove{background:#ff7eb3;color:#fff;border:none;padding:.2rem .8rem;border-radius:8px;cursor:pointer;}
     .cart-total{text-align:right;font-size:1.17rem;font-weight:700;margin:1.4rem 0;}
     .btn{background:#ff7eb3;color:#fff;padding:.7rem 1.7rem;border-radius:13px;border:none;font-weight:700;cursor:pointer;}
+    .empty{color:#a0a0a0;text-align:center;margin-top:2rem;}
   </style>
 </head>
 <body>
@@ -30,7 +31,8 @@
     const PRODUCTS = {
       'Sakura-Blend Hoodie': 'https://images.pexels.com/photos/16589650/pexels-photo-16589650.jpeg?auto=compress&cs=tinysrgb&w=500',
       'Cloud-Moment Tee': 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0&w=500',
-      'Dream-Light Jacket': 'https://stockcake.com/wp-content/uploads/2023/09/Pastel-Anime-Jacket-StockCake.jpg'
+      'Dream-Light Jacket': 'https://stockcake.com/wp-content/uploads/2023/09/Pastel-Anime-Jacket-StockCake.jpg',
+      'Pastel Street Style': 'https://images.unsplash.com/photo-1620421680383-305b4110156d?ixlib=rb-4.0&w=500'
     };
     const CART = JSON.parse(localStorage.getItem('anilux-cart')) || [];
     function renderCart(){
@@ -48,7 +50,7 @@
             <button class="cart-item-remove" onclick="removeFromCart('${item.name}')">&times;</button>
           </div>`;
       });
-      document.getElementById('cartList').innerHTML = html || "<p>Your cart is empty.</p>";
+      document.getElementById('cartList').innerHTML = html || "<div class='empty'>Your cart is empty.</div>";
       document.getElementById('cartTotal').textContent = CART.length ? "Total: $" + total : "";
     }
     function removeFromCart(name){
@@ -57,7 +59,7 @@
     }
     function checkout(){
       localStorage.removeItem('anilux-cart');
-      alert('Order placed! (demo)');
+      alert('Order placed! (demo, not real payment)');
       window.location.href = 'index.html';
     }
     renderCart();
