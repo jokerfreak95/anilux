@@ -4,20 +4,23 @@
     "name": "Akira Skyline Tee",
     "price": 29.99,
     "size": "M,L,XL",
-    "img": "images/hero1.jpg"
+    "img": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80",
+    "category": "tee"
   },
   {
     "id": "kanji-hoodie",
     "name": "Minimalist Kanji Hoodie",
     "price": 49.99,
     "size": "S,M,L,XL",
-    "img": "images/hero2.jpg"
+    "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+    "category": "hoodie"
   },
   {
     "id": "gradient-bomber",
     "name": "Studio Gradient Bomber",
     "price": 69.99,
     "size": "M,L",
-    "img": "images/hero3.jpg"
+    "img": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+    "category": "jacket"
   }
 ]
