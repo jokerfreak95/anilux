@@ -1,1 +1,143 @@
-
+:root {
+  --ink: #0f0f1b;
+  --paper: #faf9f6;
+  --accent: #ff4d82;
+  --gold: #d4af37;
+  --gray: #6b6b83;
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+}
+header.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: var(--ink);
+  color: var(--paper);
+}
+.logo a {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2rem;
+  text-decoration: none;
+}
+nav a {
+  color: var(--paper);
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 500;
+}
+.promo-banner {
+  background: var(--gold);
+  color: var(--ink);
+  text-align: center;
+  padding: 0.7rem 0;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem 1rem;
+}
+.hero h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  margin-bottom: 1.3rem;
+}
+.hero .gold {
+  color: var(--gold);
+}
+.btn {
+  padding: 0.8rem 2rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 6px #0001;
+}
+.lookbook {
+  text-align: center;
+  margin: 2rem 0;
+}
+.glider img {
+  width: 180px;
+  border-radius: 12px;
+  margin: 0.5rem;
+  box-shadow: 0 2px 8px #0001;
+}
+.filters {
+  padding: 2rem 1rem 0 1rem;
+  background: #fafafa;
+  border-radius: 6px;
+  margin-right: 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px #0001;
+  padding: 1rem;
+  text-align: center;
+}
+.email-signup {
+  display: none;
+  position: fixed;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: #0f0f1bcc;
+  z-index: 1000;
+  justify-content: center; align-items: center;
+}
+.email-signup .popup-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 18px #0003;
+  position: relative;
+}
+.email-signup input {
+  padding: 0.5rem;
+  width: 70%;
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+.email-signup button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.email-signup .close {
+  position: absolute;
+  top: 0.5rem; right: 1rem;
+  font-size: 2rem;
+  color: var(--gray);
+  cursor: pointer;
+}
+.success {
+  text-align: center;
+  margin: 3rem 0;
+}
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: var(--gray);
+}
