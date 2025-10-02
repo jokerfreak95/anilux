@@ -241,3 +241,32 @@ footer {
   .collections-grid, .review-grid { flex-direction: column; align-items: center; }
   .grid { grid-template-columns: 1fr; }
 }
+[data-theme="dark"] {
+  --cream: #0b1020;
+  --navy: #fff8f5;
+  --pink: #ff9bc0;
+  --gold: #e3c46b;
+  --gray: #a9acc4;
+}
+[data-theme="dark"] body {
+  background: var(--cream);
+  color: var(--navy);
+}
+[data-theme="dark"] .card,
+[data-theme="dark"] #modalContent {
+  background: rgba(30,35,60,0.92);
+  color: var(--navy);
+  border: 1px solid #2b2f4b;
+}
+[data-theme="dark"] .btn {
+  background: var(--pink);
+  color: #fff;
+}
+[data-theme="dark"] .btn:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+[data-theme="dark"] .hero {
+  color: #fff;
+}
+[data-theme="dark"] .stars { color: var(--gold); }
