@@ -270,3 +270,22 @@ footer {
   color: #fff;
 }
 [data-theme="dark"] .stars { color: var(--gold); }
+.theme-toggle {
+  cursor:pointer;
+  margin-left:1rem;
+  font-size:1.2rem;
+  background:var(--pink);
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  width:32px;
+  height:32px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition: background .2s;
+}
+[data-theme="dark"] .theme-toggle {
+  background: var(--gold);
+  color: var(--navy);
+}
