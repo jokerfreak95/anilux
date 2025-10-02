@@ -304,3 +304,8 @@ footer {
   .logo a { font-size: 1.1rem; }
   .glider img { width: 98px; }
   .filters { font-size: 0.98rem; }
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(48px);}
+  to { opacity:1; transform:none;}
+}
+.reveal { animation: fadeInUp 1.5s cubic-bezier(.32,.72,.38,1.13); }
