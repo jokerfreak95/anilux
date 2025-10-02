@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Inter&display=swap');
+
 :root {
   --ink: #0f0f1b;
   --paper: #faf9f6;
@@ -7,6 +9,7 @@
   --font-display: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
+
 body {
   background: var(--paper);
   color: var(--ink);
@@ -14,87 +17,113 @@ body {
   margin: 0;
   padding: 0;
 }
+
 header.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: 2rem 3vw 1rem 3vw;
   background: var(--ink);
   color: var(--paper);
 }
+
 .logo a {
   color: var(--accent);
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
 }
+.logo a:hover { color: var(--gold); }
+
 nav a {
   color: var(--paper);
   text-decoration: none;
-  margin-left: 1.2rem;
+  margin-left: 2rem;
   font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s;
 }
+nav a:hover { color: var(--accent); }
+
 .promo-banner {
   background: var(--gold);
   color: var(--ink);
   text-align: center;
-  padding: 0.7rem 0;
+  padding: 0.85rem 0;
   font-weight: 600;
   letter-spacing: 0.05em;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
 }
+
 .hero {
   text-align: center;
   padding: 3rem 1rem 2rem 1rem;
+  background: linear-gradient(120deg, #ffe0ef 0%, #faf9f6 100%);
+  border-bottom: 1px solid #f4f4f4;
 }
 .hero h2 {
   font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
-.hero .gold {
-  color: var(--gold);
-}
+.hero .gold { color: var(--gold); }
 .btn {
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 2.2rem;
   background: var(--accent);
   color: #fff;
   border: none;
-  border-radius: 3px;
-  font-size: 1.1rem;
+  border-radius: 999px;
+  font-size: 1.15rem;
   font-family: var(--font-body);
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 2px 6px #0001;
+  font-weight: 600;
+  box-shadow: 0 3px 14px #ff4d8233;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 1.2rem;
+  display: inline-block;
 }
+.btn:hover { background: #d63663; box-shadow: 0 5px 20px #ff4d8255; }
+
 .lookbook {
   text-align: center;
-  margin: 2rem 0;
+  margin: 2.5rem 0 1.5rem 0;
+}
+.lookbook h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  font-size: 1.25rem;
+  color: var(--gray);
+  margin-bottom: 1.2rem;
+}
+.glider {
+  display: flex;
+  justify-content: center;
+  gap: 1.3rem;
+  flex-wrap: wrap;
 }
 .glider img {
-  width: 180px;
-  border-radius: 12px;
-  margin: 0.5rem;
-  box-shadow: 0 2px 8px #0001;
+  width: 160px;
+  max-width: 40vw;
+  border-radius: 18px;
+  margin: 0.5rem 0;
+  box-shadow: 0 2px 16px #0002;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border: 2px solid #fff;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
-.filters {
-  padding: 2rem 1rem 0 1rem;
-  background: #fafafa;
-  border-radius: 6px;
-  margin-right: 2rem;
+.glider img:hover {
+  box-shadow: 0 6px 30px #ff4d8233;
+  transform: scale(1.03);
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 1.5rem;
-}
-.card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 1px 6px #0001;
-  padding: 1rem;
-  text-align: center;
-}
+
 .email-signup {
   display: none;
   position: fixed;
@@ -105,40 +134,59 @@ nav a {
 }
 .email-signup .popup-content {
   background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 18px;
   text-align: center;
-  box-shadow: 0 3px 18px #0003;
+  box-shadow: 0 6px 32px #0003;
   position: relative;
+  min-width: 340px;
 }
 .email-signup input {
-  padding: 0.5rem;
+  padding: 0.7rem;
   width: 70%;
-  margin: 1rem 0;
-  font-size: 1rem;
+  margin: 1.2rem 0 1rem 0;
+  font-size: 1.1rem;
+  border: 1px solid #eee;
+  border-radius: 6px;
 }
 .email-signup button {
   background: var(--accent);
   color: #fff;
   border: none;
-  padding: 0.5rem 1.5rem;
-  border-radius: 4px;
+  padding: 0.6rem 1.7rem;
+  border-radius: 999px;
   cursor: pointer;
+  font-size: 1.07rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin-left: 0.8rem;
+  transition: background 0.2s;
 }
+.email-signup button:hover { background: #d63663; }
 .email-signup .close {
   position: absolute;
   top: 0.5rem; right: 1rem;
   font-size: 2rem;
   color: var(--gray);
   cursor: pointer;
+  font-family: var(--font-display);
 }
+
 .success {
   text-align: center;
   margin: 3rem 0;
 }
+
 footer {
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 1.8rem 0 1.1rem 0;
   color: var(--gray);
+  font-size: 1.08rem;
 }
-Add style.css for main site styling
+
+@media (max-width: 600px) {
+  .hero h2 { font-size: 1.4rem; }
+  .logo a { font-size: 1.3rem; }
+  .glider img { width: 95px; }
+  .email-signup .popup-content { min-width: 96vw; }
+}.
