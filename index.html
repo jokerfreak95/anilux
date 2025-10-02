@@ -10,6 +10,7 @@
       --cream:#fff8f5;
       --navy:#0b1020;
       --pink:#ff7eb3;
+      --gold:#d4af37;
       --gray:#7a7d9c;
       --font:'Quicksand',sans-serif;
       --radius:16px;
@@ -25,8 +26,8 @@
     a{text-decoration:none;color:inherit}
     header,section,footer{padding:clamp(2rem,5vw,4rem) clamp(1rem,5vw,3rem)}
     header{display:flex;align-items:center;justify-content:space-between}
-    .logo{font-weight:600;font-size:1.5rem;letter-spacing:.05em}
-    nav a{margin-left:1.2rem;font-size:.9rem;font-weight:600}
+    .logo{font-weight:700;font-size:1.7rem;letter-spacing:.05em}
+    nav a{margin-left:1.2rem;font-size:1rem;font-weight:600}
     .hero{
       text-align:center;
       min-height:50vh;
@@ -43,27 +44,31 @@
       z-index:1;
     }
     .hero>*{position:relative;z-index:2}
-    .hero h1{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:1rem}
+    .hero h1{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:1rem;font-weight:800;}
     .hero p{font-size:1.2rem;margin-bottom:1.7rem}
     .btn{
       display:inline-block;margin-top:1.2rem;padding:.9rem 2.2rem;background:var(--pink);color:#fff;
-      border-radius:var(--radius);font-weight:600;transition:.25s;cursor:pointer;border:none;
+      border-radius:var(--radius);font-weight:700;transition:.25s;cursor:pointer;border:none;
+      font-size:1.07rem;
+      box-shadow:0 3px 12px #ff7eb344;
     }
-    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,126,179,.35)}
+    .btn:hover{background:var(--gold);color:var(--navy);}
+    #filters{margin-bottom:2rem;text-align:center;}
+    #filters .btn{margin:0 .3rem .7rem .3rem;}
     .grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
     .card{
-      background:rgba(255,255,255,.8);
-      border:1px solid rgba(255,255,255,.4);
+      background:rgba(255,255,255,.95);
+      border:1px solid #f0eaea;
       border-radius:var(--radius);
-      box-shadow:0 3px 16px #ff7eb344;
+      box-shadow:0 3px 16px #ff7eb322;
       overflow:hidden;
-      transition:.25s;
+      transition:.24s;
       position:relative;
       display:flex;flex-direction:column;align-items:center;
     }
     .card:hover{transform:translateY(-4px) scale(1.02);}
     .card-body{padding:1.2rem;width:100%;}
-    .card-body h3{font-size:1.17rem;margin-bottom:.4rem;cursor:pointer;}
+    .card-body h3{font-size:1.17rem;margin-bottom:.4rem;cursor:pointer;font-weight:700;}
     .card-body p{color:var(--gray);font-size:.95rem}
     .badge{
       position:absolute;top:16px;left:16px;
@@ -72,11 +77,12 @@
       box-shadow:0 1px 8px #ff7eb327;
     }
     .stars{
-      color:var(--pink);
+      color:var(--gold);
       font-size:1rem;
       margin-bottom:0.3rem;
+      letter-spacing:.09em;
     }
-    #cart-count{background:var(--pink);color:#fff;font-size:.7rem;padding:.18rem .5rem;border-radius:99px;margin-left:.2rem}
+    #cart-count{background:var(--pink);color:#fff;font-size:.8rem;padding:.18rem .6rem;border-radius:99px;margin-left:.3rem}
     /* Modal */
     #productModal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:10000;align-items:center;justify-content:center;}
     #modalContent{background:#fff8f5;border-radius:16px;padding:2rem;max-width:420px;width:90vw;box-shadow:0 8px 32px #0006;position:relative;}
@@ -84,11 +90,16 @@
     #modalContent button.close{position:absolute;top:.7rem;right:.7rem;background:var(--pink);color:#fff;border:none;border-radius:50%;width:2.1rem;height:2.1rem;font-size:1.3rem;cursor:pointer;}
     hr{border:none;height:1px;background:#eee;margin:1.2rem 0;}
     .size-bubble{display:inline-block;background:#eee;border-radius:8px;padding:2px 8px;margin-right:6px;font-size:.98em;}
-    .review-list{margin:.7rem 0 0 1.1rem;font-size:.97em;color:#ff7eb3;list-style-type:disc;}
+    .review-list{margin:.7rem 0 0 1.1rem;font-size:.97em;color:var(--pink);list-style-type:disc;}
     .review-list li{margin-bottom:.4em;}
+    .about, .reviews-section{max-width:660px;margin:3rem auto 0 auto;}
+    .reviews-section h2{font-size:1.15rem;margin-bottom:1.1rem;}
+    .footer-nav{margin-bottom:1rem;}
+    .footer-nav a{color:var(--gray);margin:0 1.2rem;}
+    footer{text-align:center;font-size:.93rem;color:var(--gray)}
     @media (max-width: 600px) {
       .hero h1 {font-size:1.1rem;}
-      .logo {font-size:1rem;}
+      .logo {font-size:1.09rem;}
       .grid {gap:1.2rem;}
       #modalContent{padding:1rem;}
     }
@@ -100,14 +111,24 @@
     <nav>
       <a href="#shop">Shop</a>
       <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
       <a href="#cart">Cart <span id="cart-count">0</span></a>
     </nav>
   </header>
   <section class="hero">
     <h1>Soft-Glow Anime Wear</h1>
-    <p>Comfort meets fandom – crafted for everyday adventures.</p>
+    <p>Luxury loungewear & streetwear, inspired by anime. Ethically made, limited-run, world-shipped.</p>
     <a class="btn" href="#shop">Explore Drop</a>
   </section>
+
+  <!-- FILTER BAR -->
+  <div id="filters">
+    <button class="btn" onclick="filterProducts('all')">All</button>
+    <button class="btn" onclick="filterProducts('Hoodie')">Hoodies</button>
+    <button class="btn" onclick="filterProducts('Tee')">Tees</button>
+    <button class="btn" onclick="filterProducts('Jacket')">Jackets</button>
+    <button class="btn" onclick="filterProducts('Street')">Streetwear</button>
+  </div>
 
   <!-- PRODUCT GRID -->
   <section id="shop" style="margin-top:2rem;">
@@ -122,8 +143,31 @@
     </div>
   </div>
 
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2 style="font-weight:700;">About Anilux</h2>
+    <p style="color:var(--gray);margin-bottom:1.2rem;">
+      Anilux is a new kind of anime shop: luxury loungewear, pastel palettes, and subtle designs for fans who want to express their love in style. All products are ethically made, limited-run, and shipped worldwide. Join the soft-glow revolution!
+    </p>
+    <div class="footer-nav">
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+      <a href="https://twitter.com/" target="_blank">Twitter/X</a>
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section class="reviews-section" id="reviews">
+    <h2>Fans Love Anilux</h2>
+    <ul class="review-list" style="color:var(--gray);">
+      <li>“The quality is fantastic, the details are amazing! This is more than just merch to me—it’s wearable art.” – Mina</li>
+      <li>“Thank you, Anilux! The hoodie is so soft and fits perfectly. I’ll definitely buy again!” – Jay</li>
+      <li>“Best anime clothes online. Fast shipping, premium feel, looks awesome.” – Alex</li>
+    </ul>
+  </section>
+
   <footer>
-    &copy; <span id="year"></span> Anilux. All rights reserved.
+    &copy; <span id="year"></span> Anilux. All rights reserved.<br>
+    <span style="font-size:.8em;">Not affiliated with any official anime studios. For demo only.</span>
   </footer>
 
   <script>
@@ -134,6 +178,7 @@
     const products = [
       {
         name: "Sakura-Blend Hoodie",
+        type: "Hoodie",
         img: "https://images.pexels.com/photos/16589650/pexels-photo-16589650.jpeg?auto=compress&cs=tinysrgb&w=500",
         price: 79,
         badge: "Best Seller",
@@ -147,6 +192,7 @@
       },
       {
         name: "Cloud-Moment Tee",
+        type: "Tee",
         img: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0&w=500",
         price: 42,
         badge: "New",
@@ -160,6 +206,7 @@
       },
       {
         name: "Dream-Light Jacket",
+        type: "Jacket",
         img: "https://stockcake.com/wp-content/uploads/2023/09/Pastel-Anime-Jacket-StockCake.jpg",
         price: 129,
         badge: "Limited",
@@ -173,6 +220,7 @@
       },
       {
         name: "Pastel Street Style",
+        type: "Street",
         img: "https://images.unsplash.com/photo-1620421680383-305b4110156d?ixlib=rb-4.0&w=500",
         price: 65,
         badge: "Staff Pick",
@@ -186,9 +234,18 @@
       }
     ];
 
+    // PRODUCT FILTERING
+    let currentFilter = 'all';
+    function filterProducts(type) {
+      currentFilter = type;
+      renderGrid();
+    }
+
     // RENDER PRODUCT GRID
     function renderGrid() {
-      document.getElementById('productGrid').innerHTML = products.map(p => `
+      document.getElementById('productGrid').innerHTML = products
+        .filter(p => currentFilter === 'all' || p.type === currentFilter)
+        .map(p => `
         <div class="card">
           <span class="badge">${p.badge}</span>
           <img src="${p.img}" alt="${p.name}" onclick="showModal('${p.name}')" style="cursor:pointer;">
@@ -225,7 +282,7 @@
       document.getElementById('productModal').style.display = 'none';
     }
 
-    // CART LOGIC
+    // CART LOGIC (Local Storage)
     const CART = JSON.parse(localStorage.getItem('anilux-cart')) || [];
     function saveCart(){ localStorage.setItem('anilux-cart', JSON.stringify(CART)); }
     function renderCount(){
@@ -235,6 +292,7 @@
       const exist = CART.find(i => i.name === name);
       exist ? exist.qty++ : CART.push({name,price,qty:1});
       saveCart(); renderCount();
+      // Toast
       const t = document.createElement('div'); t.textContent = 'Added ✨'; t.style.cssText = 'position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;padding:.6rem 1.4rem;border-radius:var(--radius);font-size:.97rem;animation:fade 1.5s forwards;z-index:9999;';
       document.body.appendChild(t); setTimeout(()=>t.remove(),1400);
     }
